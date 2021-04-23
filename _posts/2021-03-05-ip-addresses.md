@@ -5,8 +5,6 @@ date:   2021-03-05
 categories: phoenix-articles
 ---
 
-_This article was [originally published](https://swarthmorephoenix.com/2021/03/05/the-phone-numbers-of-the-internet/) in the Swarthmore Phoenix._
-
 In the scant logic of “hacking” in movies or TV shows, IP addresses seemingly play a big role. Finding an IP address is the key to figuring out exactly who the mysterious hacker is, or how to break into the top-secret computer system, or whatever. This is…mostly false, at least in the way it’s presented in most media, but there are some kernels of truth in there. Let’s start from the top, though: what are IP addresses? Why are they useful? And why would you care, or not care, about hiding yours? 
 
 An IP address is basically an internet phone number for your computer. (Or phone, or printer, or smart fridge, or something.) At least, that was the original intention. Nowadays it’s a little bit more complicated, and I’ll explain why in a moment, but the general idea—that an IP address tells the internet where to send something—still stands.
@@ -45,3 +43,6 @@ Some final notes:
   * Technically, devices on Swarthmore’s eduroam Wi-Fi network get assigned IPs from some smaller sub-range; ITS allocates various ranges for Wi-Fi versus hardwired devices, different buildings on campus, and so on, along with a few separate fortified areas for highly secure stuff. Either way, though, you get an IP somewhere in Swarthmore’s range.
   * While the original intention was that each computer would have some individual IP address for fairly long periods of time, analogous to a phone number, later developments such as Wi-Fi have changed that. In the course of a day, your smartphone or laptop might switch between several different IPs as it connects to different Wi-Fi or cellular networks. Also, your home’s IP might change occasionally, due to the way that internet providers allocate addresses. Since there’s no reason anyone actually needs to initiate a connection to your personal devices (unless you’re doing something like running a Minecraft server), this usually doesn’t matter. Industrial-grade computers like website servers usually have a static IP, which changes extremely rarely but is somewhat more complicated.
   * Thank you to Mark Dumic from ITS for answering my questions about Swarthmore’s campus network, as well as the two people in Willets basement lounge three weeks ago who wanted to know about this topic and made me realize I should write an article about it. (I have entirely forgotten what your names were. Sorry about that.)
+
+_This article was [originally published](https://swarthmorephoenix.com/2021/03/05/the-phone-numbers-of-the-internet/) in the Swarthmore Phoenix._
+

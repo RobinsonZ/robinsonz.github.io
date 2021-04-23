@@ -5,8 +5,6 @@ date: 2020-10-09
 categories: phoenix-articles
 ---
 
-_This article was [originally published](https://swarthmorephoenix.com/2020/10/09/hashing-it-out-what-you-need-to-know-about-passwords/) in the Swarthmore Phoenix._
-
 In my [last article]({% post_url 2020-09-25-vpn %}), I mentioned that the best way to protect yourself online is to use a good password manager and unique passwords for all your websites. However, I didn’t elaborate much on exactly why that’s the case. As such, this time on *I Promise I’ll Come Up With a Name for This Column Eventually*, I’ll be covering the good, the bad, and the ugly of how we log in to websites.
 
 There’s a myriad of ways that you can secure your online accounts, but we’ll start with arguably the most common: the humble password. The concept of a password is simple: a string of characters and words known only to you, which the website in question checks against its database. However, passwords are actually deceptively complicated in two major ways: how to define a “strong” password, and how the website actually checks that you have the right one.
@@ -54,3 +52,6 @@ Some final notes:
 * The discussion of password strength is mostly based on [that one xkcd comic](https://xkcd.com/936/) and the associated [commentary wiki](https://explainxkcd.com/wiki/index.php/936:_Password_Strength). The possible password combinations were calculated as follows: “uncommon word” is one of the [171,476 words](https://www.lexico.com/explore/how-many-words-are-there-in-the-english-language) in current usage according to the Oxford English Dictionary, “common words” assumes a list of 2,000 words, and “random gibberish” is a random assortment of the 94 printable ASCII characters (not including the space).
 * There’s actually even more about password storage that I didn’t cover (like peppering and work factors). If you want to learn more about those, [here’s a fairly accessible explanation](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html). 
 * For more info about password manager security, 1Password has released a [whitepaper](https://1password.com/files/1Password-White-Paper.pdf) which does an exhaustive dive into all the cryptography and security mechanisms present in their product. It’s well-written and provides a great overview of secure design that remains user-friendly, but it’s not exactly for the faint of heart. [LastPass](https://assets.cdngetgo.com/1d/ee/d051d8f743b08f83ee8f3449c15d/lastpass-technical-whitepaper.pdf) and [Dashlane](https://www.dashlane.com/download/Dashlane_SecurityWhitePaper_September2019.pdf) also have similar whitepapers.
+
+_This article was [originally published](https://swarthmorephoenix.com/2020/10/09/hashing-it-out-what-you-need-to-know-about-passwords/) in the Swarthmore Phoenix._
+

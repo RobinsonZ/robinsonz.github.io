@@ -3,20 +3,14 @@ layout: page
 title: About Me
 permalink: /about/
 ---
+Hi, I'm Zack! I'm a student, programmer, maker, and occasional writer. Currently, I'm studying as a candidate for a BA in Computer Science and English Literature at Swarthmore College. I'm also a member of the [Swarthmore College Computer Society](https://www.sccs.swarthmore.edu/), and I used to run the software department on [FRC Team 1540, The Flaming Chickens](https://team1540.org). You can look at some of my work [here]({% link projects.md %}). My email address is `z [at] robinsonz [dot] me`.
 
-# Hi! I'm Zack!
+### Skills
 
-I'm a student, programmer, maker, and occasional writer.
+- I have about six years of programming experience, mostly in **Java**, **Kotlin**, and **Python**, with some experience with **C**, **shell scripts**, and **Arduino** programming. 
+- I'm familiar with a variety of software technologies and libraries, including **Amazon Web Services**, **MongoDB**, **WebRTC**, **Android**, **ROS**, and **Spring Boot**.
+- I have plenty of experience with **Git** and **Github**, including best practices and troubleshooting. I'm also proficient with **MS Office** and **G Suite**, as well as **Jekyll** (which I used to make this website) and **LaTeX**.
+- I can write concisely and clearly for a variety of audiences, with a particular focus and interest in communicating technical topics to audiences that may be unfamiliar with the field in question. 
+- I'm proficient with **Autodesk Fusion 360** and general CAD/CAM procedures. I also have intermediate knowledge of **machine shop tools and safety**, including lathes, mills, bandsaws, etc., particularly with aluminum. 
+- I have good **leadership**, **communication**, and **project management** skills, and can work effectively on my own or with a team as required. 
 
-* 🔥 Passionate about:
-  * 💡 Human-centric technology informed by the liberal arts
-  * 🤝 Bringing an interdisciplinary perspective to everything I create
-  * 🏛 Improving the discussion around technology issues by making complex topics more accessible
-  * 🍵 Chai lattes
-* 🎓 Studying computer science and a lot of other things at Swarthmore College
-* 🖥 Member, [Swarthmore College Computer Society](https://www.sccs.swarthmore.edu/)
-* 🤖 Former Software Co-Manager, [FRC Team 1540 The Flaming Chickens](https://team1540.org)
-* 💬 Ask me about robotics, Java/Kotlin programming, 20th-century literary modernism, or FDM 3D printing
-* 📫 Contact me: Email me using the address in the footer, or [connect with me on LinkedIn](https://www.linkedin.com/in/robinsonz/)
-
-This website/blog is mostly a mirror for my tech-related articles on the Swarthmore _Phoenix_ newspaper.
