@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: robinsonz.me
 description: > # this means to ignore newlines until "baseurl:"
-  My personal website
+  I'm Zachary Robinson — student, programmer, maker, and writer.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://robinsonz.me" # the base hostname & protocol for your site
 
