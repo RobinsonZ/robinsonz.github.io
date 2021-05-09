@@ -39,3 +39,5 @@ show_excerpts: true
 # Build settings
 markdown: kramdown
 
+google_analytics: UA-196565869-1
+
