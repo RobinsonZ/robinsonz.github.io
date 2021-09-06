@@ -3,7 +3,7 @@ layout: page
 title: About Me
 permalink: /about/
 ---
-Hi, I'm Zack! I'm a student, programmer, maker, and occasional writer. Currently, I'm studying as a candidate for a BA in Computer Science and English Literature at Swarthmore College. I'm also a member of the [Swarthmore College Computer Society](https://www.sccs.swarthmore.edu/), and I used to run the software department on [FRC Team 1540, The Flaming Chickens](https://team1540.org). You can look at some of my work [here]({% link projects.md %}). My email address is `z [at] robinsonz [dot] me`.
+Hi, I'm Zack! I'm a student, programmer, maker, and occasional writer. Currently, I'm studying as a candidate for a BA in Computer Science and English Literature at Swarthmore College. I'm also the vice president of the [Swarthmore College Computer Society](https://www.sccs.swarthmore.edu/), and I used to run the software department on [FRC Team 1540, The Flaming Chickens](https://team1540.org). You can look at some of my work [here]({% link projects.md %}). My email address is `z [at] robinsonz [dot] me`.
 
 ### Skills
 
