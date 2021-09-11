@@ -6,6 +6,10 @@ permalink: /projects/
 
 A non-exhaustive list of my work. 
 
+## Swarthmore College Computer Society
+
+I'm vice president of the [Swarthmore College Computer Society](https://www.sccs.swarthmore.edu/) (SCCS), a 30-year-old student-run organization that provides a variety of services for the Swarthmore College community. SCCS provides a student directory, classifieds, a course planner, and more, as well as a media lounge and gaming pit for student use. As Vice President, I have a key role in day-to-day club operations including recruitment, management, and communications, in addition to low-level maintenance and system administration of club infrastructure.
+
 ## Columns for the Swarthmore *Phoenix*
 
 Since fall 2020, I've been writing a mostly-biweekly column on technology concepts in Swarthmore College's student newspaper, the [*Phoenix*](https://www.swarthmorephoenix.com/). Articles from that column are mirrored on this website.
