@@ -3,7 +3,7 @@ layout: page
 title: About Me
 permalink: /about/
 ---
-Hi, I'm Zack! I'm a software developer, system administrator, maker, and writer. Currently, I'm studying as a candidate for a BA in Computer Science and English Literature at Swarthmore College. I'm also Vice President of the [Swarthmore College Computer Society](https://www.sccs.swarthmore.edu/). You can look at some of my work [here]({% link projects.md %}). My GitHub is [here](https://github.com/RobinsonZ). My LinkedIn is [here](https://www.linkedin.com/in/robinsonz/). My email address is `z [at] robinsonz [dot] me`.
+Hi, I'm Zack! I'm a software developer, system administrator, maker, and writer. Currently, I'm studying as a candidate for a BA in Computer Science and English Literature at Swarthmore College. I'm also Co-president of the [Swarthmore College Computer Society](https://www.sccs.swarthmore.edu/). You can look at some of my work [here]({% link projects.md %}). My GitHub is [here](https://github.com/RobinsonZ). My LinkedIn is [here](https://www.linkedin.com/in/robinsonz/). My email address is `z [at] robinsonz [dot] me`.
 
 ### Skills
 
