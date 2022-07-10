@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: Zachary Robinson
+layout: home
 ---
 
 # Hello
