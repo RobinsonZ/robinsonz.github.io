@@ -1,0 +1,5 @@
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///Users/robinsonz/Documents/code/robinsonz.github.io/.github/workflows/build.yml"
+  }
+}
