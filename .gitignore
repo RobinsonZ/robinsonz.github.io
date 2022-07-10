@@ -4,4 +4,4 @@ _site
 node_modules
 dist
 _data
-vendor/bundle
+vendor/
