@@ -9,6 +9,7 @@ exclude:
   - "package*.json"
   - "assets"
   - "node_modules"
+  - "vendor"
 
 google_analytics: UA-196565869-1
 
