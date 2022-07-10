@@ -61,7 +61,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  eventmachine (~> 1.0.8)
   jekyll (~> 4.2.0)
 
 BUNDLED WITH
