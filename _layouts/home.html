@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zack Robinson</title>
-    <meta name="description" content="I'm a software developer, system administrator, maker, and writer." />
+    <meta
+      name="description"
+      content="I'm a software developer, system administrator, maker, and writer."
+    />
     <meta name="keywords" content="" />
     <meta name="author" content="Zachary Robinson" />
     <link rel="stylesheet" href="{{ site.data.manifest['style.css'] }}" />
@@ -22,17 +25,37 @@
         class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center"
       >
         <div
-          class="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left"
+          class="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left md:pl-4"
         >
           <h1 class="my-4 text-8xl font-bold leading-tight w-full">
             Hi, I'm Zack.
           </h1>
           <p
             class="leading-normal text-2xl mb-8 transition-all translate-y-12 opacity-0 ease-out duration-1000"
-            data-replace='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100" }'
+            data-replace-1s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100" }'
           >
             I'm a software developer, system administrator, maker, and writer.
           </p>
+        </div>
+        <div
+          class="flex flex-col w-full md:w-3/5 justify-center items-start text-left bg-gray-800 rounded-xl drop-shadow-lg p-4 translate-y-12 opacity-0 ease-out duration-1000"
+          data-replace-2s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100" }'
+        >
+          {% comment %} this is pretty gross but it's the only way I can make
+          jekyll syntax highlighting happy {% endcomment %}
+          <!-- prettier-ignore -->
+          {% highlight json %}
+{
+  "skills": ["html-css-js", "java", "kotlin", "python", "writing"]
+  "email": "z [at] robinsonz [dot] me",
+  "github": "RobinsonZ",
+  "linkedin": "RobinsonZ"
+}
+{% endhighlight %}
+
+          <!-- <p class="leading-normal text-lg my-8 font-mono">
+            
+          </p> -->
         </div>
       </div>
     </div>
