@@ -3,7 +3,8 @@
       "color": "#fff"
   },
   "fullScreen": {
-      "zIndex": -1
+    "enable": true,
+    "zIndex": -1
   },
   "interactivity": {
       
@@ -30,7 +31,8 @@
       "number": {
           "density": {
               "enable": true
-          }
+          },
+          "value": 200
       },
       "opacity": {
           "animation": {

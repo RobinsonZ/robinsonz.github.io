@@ -1,51 +1,39 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ManifestPlugin = require("webpack-manifest-plugin");
-var CopyWebpackPlugin = require("copy-webpack-plugin");
-const isProduction = process.env.NODE_ENV === "production";
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
-  mode: isProduction ? "production" : "development",
-  entry: {
-    style: path.resolve(__dirname, "./assets/index.css"),
-    script: path.resolve(__dirname, "./assets/index.js"),
-  },
+  mode: isProduction ? 'production' : 'development',
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "./dist/"),
-    filename: isProduction ? "[name].[hash].js" : "[name].js",
-    chunkFilename: isProduction ? "[id].[hash].js" : "[id].js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/index.html'),
+    }),
+  ],
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
+        test: /\.js$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
           },
-          "css-loader",
-          "postcss-loader",
-        ],
+        },
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|json)$/i,
+        type: 'asset',
       },
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: isProduction ? "[name].[hash].css" : "[name].css",
-    }),
-    new ManifestPlugin.WebpackManifestPlugin({
-      fileName: "../_data/manifest.yml",
-      publicPath: "./dist/",
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "static/",
-          to: "static/",
-        },
-      ],
-    }),
-  ],
 };
