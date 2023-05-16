@@ -523,6 +523,9 @@ video {
 .absolute {
   position: absolute;
 }
+.bottom-0 {
+  bottom: 0px;
+}
 .bottom-4 {
   bottom: 1rem;
 }
@@ -560,6 +563,9 @@ video {
 }
 .flex {
   display: flex;
+}
+.h-3\/4 {
+  height: 75%;
 }
 .h-screen {
   height: 100vh;
@@ -640,9 +646,6 @@ video {
 }
 .pb-24 {
   padding-bottom: 6rem;
-}
-.pt-24 {
-  padding-top: 6rem;
 }
 .pt-4 {
   padding-top: 1rem;
@@ -743,6 +746,10 @@ html {
   .sm\:w-full {
     width: 100%;
   }
+
+  .sm\:pt-12 {
+    padding-top: 3rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -776,6 +783,10 @@ html {
 
   .lg\:items-start {
     align-items: flex-start;
+  }
+
+  .lg\:pt-24 {
+    padding-top: 6rem;
   }
 
   .lg\:text-left {
