@@ -1,11 +1,14 @@
 import { tsParticles } from "tsparticles-engine";
-import { loadFull } from "tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 import hljs from "highlight.js/lib/core";
 import json from "highlight.js/lib/languages/json";
 hljs.registerLanguage("json", json);
 
-import "@fortawesome/fontawesome-free/js/all";
+import { icon } from '@fortawesome/fontawesome-svg-core'
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare'
+
+const externalLinkSymbol = icon(faArrowUpRightFromSquare, {transform: { size: 12 }});
 
 function replaceCodeSpanWithLink(textToReplace, link, linkText) {
   const codeSpanWithText = document.evaluate(
@@ -16,7 +19,7 @@ function replaceCodeSpanWithLink(textToReplace, link, linkText) {
     null
   ).singleNodeValue;
 
-  codeSpanWithText.innerHTML = `<a class="hover:underline" href="${link}">"${linkText}<span class="font-serif">&thinsp;<i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i>&hairsp;</span>"</a>`;
+  codeSpanWithText.innerHTML = `<a class="hover:underline" href="${link}">"${linkText}<span class="font-serif">&thinsp;${externalLinkSymbol.html}&hairsp;</span>"</a>`;
 }
 
 // animation stuff
@@ -74,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // this has to go afterwards, because weird syntax happens with this inline definition
 (async () => {
-  await loadFull(tsParticles);
+  await loadSlim(tsParticles);
 
   const particlesConfig = await (
     await fetch(new URL("./static/particles.json", import.meta.url))
