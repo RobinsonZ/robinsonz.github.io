@@ -20,41 +20,128 @@
     />
   </head>
   <body
-    class="leading-normal tracking-normal"
+    class="tracking-normal leading-relaxed"
     style="font-family: 'Lato', sans-serif"
   >
-    <div
-      class="pt-24 h-screen w-screen bg-blue-900 bg-opacity-100 transition-none ease-in duration-700 fixed"
-      data-replace-instant='{ "bg-opacity-100": "bg-opacity-80", "transition-none": "transition-colors" }'
-    ></div>
-    <div
-      class="pt-24 container px-3 mx-auto flex flex-wrap flex-col lg:flex-row items-center text-white z-10"
-    >
+    <div class="pt-24 h-screen w-screen bg-blue-900 bg-opacity-80 fixed z-10">
       <div
-        class="flex flex-col w-full lg:w-3/5 justify-center items-start text-center lg:text-left md:pl-4"
+        class="container px-3 mx-auto flex flex-wrap flex-col lg:flex-row items-center text-white"
       >
-        <h1 class="my-4 text-6xl lg:text-8xl leading-tight w-full z-20 lg:mb-16" style="font-family: 'Playfair Display'">
-          Hi, I&rsquo;m Zack.
-        </h1>
-        <p
-          class="leading-normal text-2xl mb-8 lg:mb-16 transition translate-y-12 opacity-0 ease-out duration-1000 invisible"
-          data-replace-1s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100", "ease-out": "", "invisible": ""}'
+        <div
+          class="flex flex-col w-full lg:w-3/5 justify-center items-start text-center lg:text-left md:pl-4"
         >
-          I'm a software engineer, system administrator, maker,&nbsp;and&nbsp;writer.
-        </p>
-      </div>
-      <div
-        class="flex flex-col w-fit sm:w-full lg:w-3/5 justify-center items-start text-left bg-gray-800 rounded-xl drop-shadow-lg transition translate-y-12 opacity-0 duration-1000 invisible"
-        data-replace-2s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100", "invisible": ""}'
-        data-replace-3s='{ "duration-1000": "" }'
-      >
-        <pre id="contacts-json"><code class="language-json bg-opacity-0 bg-transparent">{
+          <h1
+            class="my-4 text-6xl lg:text-8xl leading-tight w-full z-20 lg:mb-16"
+            style="font-family: 'Playfair Display'"
+          >
+            Hi, I&rsquo;m Zack.
+          </h1>
+          <p
+            class="leading-normal text-2xl mb-8 lg:mb-16 transition translate-y-12 opacity-0 ease-out duration-1000 invisible"
+            data-replace-1s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100", "ease-out": "", "invisible": ""}'
+          >
+            I&rsquo;m a software engineer, system administrator,
+            maker,&nbsp;and&nbsp;writer.
+          </p>
+        </div>
+        <div
+          class="flex flex-col mb-8 lg:mb-16 w-fit sm:w-full lg:w-3/5 justify-center items-start text-left bg-gray-800 rounded-xl drop-shadow-lg transition translate-y-12 opacity-0 duration-1000 invisible"
+          data-replace-2s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100", "invisible": ""}'
+          data-replace-3s='{ "duration-1000": "" }'
+        >
+          <pre
+            id="contacts-json"
+          ><code class="language-json bg-opacity-0 bg-transparent">{
   "email": "z [at] robinsonz [dot] me",
   "github": "github.com/RobinsonZ",
   "linkedin": "linkedin.com/in/robinsonz/"
 }</code></pre>
+        </div>
+        <div
+          class="flex flex-row container mb-8 lg:mb-16 w-fit sm:w-full lg:w-3/5 items-start text-left transition translate-y-12 opacity-0 duration-1000 invisible"
+          data-replace-3s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100", "invisible": ""}'
+          data-replace-4s='{ "duration-1000": "" }'
+        >
+          <div class="flex text-2xl w-fit m-8">
+            <a href="#about-me">About Me</a>
+          </div>
+          <div class="flex text-2xl w-fit m-8">
+            <a href="#projects">Projects</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div id="ts-particles"></div>
+    <div class="h-screen w-screen invisible -z-50"></div>
+    <div
+      class="w-screen min-h-screen bg-gray-800 z-20 absolute pt-4 md:pt-16 py-4"
+    >
+      <div
+        class="container px-3 mx-auto flex flex-row lg:flex-col items-center lg:items-start text-white"
+      >
+        <div class="flex flex-col w-full lg:w-3/5">
+          <a id="about-me"></a>
+          <h2
+            class="my-4 text-4xl leading-tight w-full z-20 lg:mb-16"
+            style="font-family: 'Playfair Display'"
+          >
+            About Me
+          </h2>
+          <p class="mb-4">
+            My name is Zack Robinson. I like to write software (and occasionally
+            words) to help people accomplish their goals, avoid tedium, and
+            learn something new about the world we inhabit and the systems we
+            use. I have a particular interest in human-computer
+            interaction,embedded systems, efficient infrastructure, and
+            cross-disciplinary integration. I&rsquo;m studying for a BA in
+            Computer Science, with minors in Engineering and English Literature,
+            at
+            <a class="underline" href="https://swarthmore.edu"
+              >Swarthmore College</a
+            >. I&rsquo;m also one of the current co-presidents of the
+            <a class="underline" href="https://sccs.swarthmore.edu"
+              >Swarthmore College Computer Society</a
+            >, a 32-year-old chartered student organization with about 40
+            members. I&rsquo;m spending this summer as a software engineer
+            intern at
+            <a class="underline" href="https://www.arcesium.com/">Arcesium</a>.
+          </p>
+          <p class="mb-4">
+            The first code I ever wrote was on my TI-84 graphing calculator in
+            middle school algebra class. Since then, I&rsquo;ve mostly moved on
+            to slightly more powerful technologies. I&rsquo;ve completed
+            significant projects with Java, Typescript, HTML/CSS/JS, Kotlin,
+            Python, and OCaml.
+          </p>
+          <p class="mb-4">
+            I grew up in the city of Portland, Oregon. I used to be a student on
+            FIRST&reg; Robotics Competition
+            <a class="underline" href="https://team1540.org">Team&nbsp;1540</a>,
+            and I&rsquo;m still involved in the program through volunteering as
+            a Control System Advisor and contributions to competition-specific
+            libraries.
+          </p>
+
+          <div class="absolute bottom-4 text-sm">
+            <p class="mb-4">
+              &copy; <span id="copy-year">2023</span> Zack Robinson. This
+              website was built using
+              <a class="underline" href="https://tailwindcss.com/"
+                >Tailwind CSS</a
+              >
+              and
+              <a class="underline" href="/bundle.js.LICENSE.txt"
+                >other projects</a
+              >, and is also
+              <a
+                class="underline"
+                href="https://github.com/RobinsonZ/robinsonz.github.io"
+                >open-source</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ts-particles" class="fixed -z-50"></div>
   </body>
 </html>
