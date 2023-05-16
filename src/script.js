@@ -19,7 +19,7 @@ function replaceCodeSpanWithLink(textToReplace, link, linkText) {
     null
   ).singleNodeValue;
 
-  codeSpanWithText.innerHTML = `<a class="hover:underline" href="${link}">"${linkText}<span class="font-serif">&thinsp;${externalLinkSymbol.html}&hairsp;</span>"</a>`;
+  codeSpanWithText.innerHTML = `<a class="hover:underline" href="${link}">"${linkText}<span class="font-serif">&hairsp;${externalLinkSymbol.html}</span>"</a>`;
 }
 
 // animation stuff

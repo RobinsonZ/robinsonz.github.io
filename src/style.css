@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* syntax highlighting */
 @import "highlight.js/styles/monokai.css";
+
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400");
+@import url("https://fonts.googleapis.com/css?family=Lato:400");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400");
 
 html {
   scroll-behavior: smooth;
