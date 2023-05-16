@@ -2,10 +2,6 @@
   "background": {
       "color": "#fff"
   },
-  "fullScreen": {
-    "enable": true,
-    "zIndex": -1
-  },
   "interactivity": {
       
   },
