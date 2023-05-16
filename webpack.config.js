@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   entry: './src/index.js',
@@ -12,7 +14,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
     }),
-  ],
+  ].concat(isProduction ? [new MiniCssExtractPlugin()] : []),
   module: {
     rules: [
       {
@@ -28,7 +30,10 @@ module.exports = {
       {
         test: /\.css$/i,
         include: path.resolve(__dirname, 'src'),
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: [
+          isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 
+          'css-loader', 
+          'postcss-loader'],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|json)$/i,
