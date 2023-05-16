@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* syntax highlighting */
+@import 'highlight.js/styles/monokai.css';
