@@ -3,4 +3,8 @@
 @tailwind utilities;
 
 /* syntax highlighting */
-@import 'highlight.js/styles/monokai.css';
+@import "highlight.js/styles/monokai.css";
+
+html {
+  scroll-behavior: smooth;
+}

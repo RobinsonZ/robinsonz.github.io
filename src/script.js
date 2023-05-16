@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(doReplace("replace-1s"), 1000);
   setTimeout(doReplace("replace-2s"), 2000);
   setTimeout(doReplace("replace-3s"), 3000);
+  setTimeout(doReplace("replace-4s"), 4000);
 
   hljs.highlightAll();
 
