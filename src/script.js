@@ -7,9 +7,14 @@ hljs.registerLanguage("json", json);
 
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons/faLaptopCode";
 
 const externalLinkSymbol = icon(faArrowUpRightFromSquare, {
   transform: { size: 12 },
+});
+
+const laptopCode = icon(faLaptopCode, {
+  transform: { size: 14 },
 });
 
 function replaceCodeSpanWithLink(textToReplace, link, linkText) {
@@ -21,7 +26,7 @@ function replaceCodeSpanWithLink(textToReplace, link, linkText) {
     null
   ).singleNodeValue;
 
-  codeSpanWithText.innerHTML = `<a class="hover:underline" href="${link}">"${linkText}<span class="font-serif">&hairsp;${externalLinkSymbol.html}</span>"</a>`;
+  codeSpanWithText.innerHTML = `<a class="hover:underline no-underline" href="${link}">"${linkText}<span class="font-serif">&hairsp;${externalLinkSymbol.html}</span>"</a>`;
 }
 
 // for turning background dark when user scrolls far enough
@@ -105,6 +110,12 @@ document.addEventListener("DOMContentLoaded", function () {
       backgroundIsDark = false;
     }
   });
+
+  // add icons to projects container
+  const projectsContainer = document.getElementById("projects-container");
+
+  projectsContainer.innerHTML = projectsContainer.innerHTML.replace(/FA-COMPUTER/g, laptopCode.html)
+
 });
 
 // this has to go afterwards, because weird syntax happens with this inline definition
