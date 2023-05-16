@@ -67,6 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
     /:<\/span> /g,
     ':</span> <span class="sm:hidden">\n    </span>'
   );
+
+  // fix copyright year if needed
+  document.getElementById("copy-year").textContent = new Date().getFullYear().toString();
 });
 
 // this has to go afterwards, because weird syntax happens with this inline definition
