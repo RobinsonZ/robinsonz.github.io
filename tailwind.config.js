@@ -6,7 +6,7 @@ module.exports = {
       fontFamily: {
         lato: ["Lato", "sans-serif"],
         playfair: ["Playfair Display", "serif"],
-        robotoMono: ["Roboto Mono", "monospace"]
+        robotoMono: ["Roboto Mono", "monospace"],
       },
     },
   },

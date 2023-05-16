@@ -8,7 +8,9 @@ hljs.registerLanguage("json", json);
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
 
-const externalLinkSymbol = icon(faArrowUpRightFromSquare, {transform: { size: 12 }});
+const externalLinkSymbol = icon(faArrowUpRightFromSquare, {
+  transform: { size: 12 },
+});
 
 function replaceCodeSpanWithLink(textToReplace, link, linkText) {
   const codeSpanWithText = document.evaluate(
