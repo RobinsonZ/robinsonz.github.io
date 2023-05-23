@@ -1,7 +1,17 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const LicensePlugin = require("webpack-license-plugin");
+
 const path = require("path");
 const isProduction = process.env.NODE_ENV === "production";
+
+const txtLicenseTransform = (packages) =>
+  packages
+    .map(
+      (package) =>
+        `${package["name"]} ${package["version"]}\n${package["repository"]}\n${package["licenseText"]}`
+    )
+    .join("\n\n");
 
 module.exports = {
   mode: isProduction ? "production" : "development",
@@ -13,6 +23,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
+    }),
+    new LicensePlugin({
+      additionalFiles: {
+        "licenses.txt": txtLicenseTransform,
+      },
+      includePackages: () => ["node_modules/tailwindcss"],
     }),
   ].concat(isProduction ? [new MiniCssExtractPlugin()] : []),
   module: {
