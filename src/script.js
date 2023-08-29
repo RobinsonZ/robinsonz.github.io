@@ -33,7 +33,6 @@ function replaceCodeSpanWithLink(textToReplace, link, linkText) {
 let backgroundIsDark = false;
 
 // animation stuff
-// TODO: disable animations if user prefers reduced motion
 document.addEventListener("DOMContentLoaded", function () {
   var doReplace = function (attribute) {
     return function () {
