@@ -19,6 +19,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    assetModuleFilename: "[name][ext][query]"
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -54,6 +55,10 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|json)$/i,
+        type: "asset",
+      },
+      {
+        test: /\.pdf$/i,
         type: "asset",
       },
     ],

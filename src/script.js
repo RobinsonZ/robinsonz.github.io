@@ -7,9 +7,16 @@ hljs.registerLanguage("json", json);
 
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
+import { faFileAlt } from "@fortawesome/free-solid-svg-icons/faFileAlt";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons/faLaptopCode";
 
+import resumePdf from "./static/robinsonz-resume.pdf";
+
 const externalLinkSymbol = icon(faArrowUpRightFromSquare, {
+  transform: { size: 12 },
+});
+
+const fileSymbol = icon(faFileAlt, {
   transform: { size: 12 },
 });
 
@@ -17,7 +24,9 @@ const laptopCode = icon(faLaptopCode, {
   transform: { size: 14 },
 });
 
-function replaceCodeSpanWithLink(textToReplace, link, linkText) {
+function replaceCodeSpanWithLink(textToReplace, link, linkText, isFile) {
+  const icon = isFile ? fileSymbol : externalLinkSymbol;
+
   const codeSpanWithText = document.evaluate(
     `//*[@id="contacts-json"]//span[contains(text(), "${textToReplace}")]`,
     document,
@@ -26,7 +35,11 @@ function replaceCodeSpanWithLink(textToReplace, link, linkText) {
     null
   ).singleNodeValue;
 
-  codeSpanWithText.innerHTML = `<a class="hover:underline no-underline" href="${link}">"${linkText}<span class="font-serif">&hairsp;${externalLinkSymbol.html}</span>"</a>`;
+  if (isFile) {
+    codeSpanWithText.innerHTML = `<a class="hover:underline no-underline" href="${link}" download>"<span class="font-serif">${icon.html}&hairsp;</span>${linkText}"</a>`;
+  } else {
+    codeSpanWithText.innerHTML = `<a class="hover:underline no-underline" href="${link}">"${linkText}<span class="font-serif">&hairsp;${icon.html}</span>"</a>`;
+  }
 }
 
 // for turning background dark when user scrolls far enough
@@ -63,13 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
   replaceCodeSpanWithLink(
     "github.com/RobinsonZ",
     "https://github.com/RobinsonZ",
-    "RobinsonZ"
+    "RobinsonZ",
+    false
   );
   replaceCodeSpanWithLink(
     "linkedin.com/in/robinsonz/",
     "https://linkedin.com/in/robinsonz/",
-    "in/robinsonz"
+    "in/robinsonz",
+    false
   );
+  replaceCodeSpanWithLink("resume.pdf", resumePdf, "resume.pdf", true);
 
   // it gets worse
   // go through and add auto-hiding linebreaks to all the colons in the JSON, so that we
@@ -113,8 +129,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // add icons to projects container
   const projectsContainer = document.getElementById("projects-container");
 
-  projectsContainer.innerHTML = projectsContainer.innerHTML.replace(/FA-COMPUTER/g, laptopCode.html)
-
+  projectsContainer.innerHTML = projectsContainer.innerHTML.replace(
+    /FA-COMPUTER/g,
+    laptopCode.html
+  );
 });
 
 // this has to go afterwards, because weird syntax happens with this inline definition
