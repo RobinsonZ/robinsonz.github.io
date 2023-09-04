@@ -59,7 +59,7 @@ module.exports = {
       },
       {
         test: /\.pdf$/i,
-        type: "asset",
+        type: "asset/resource",
       },
     ],
   },
