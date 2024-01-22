@@ -20,10 +20,6 @@ const fileSymbol = icon(faFileAlt, {
   transform: { size: 12 },
 });
 
-const laptopCode = icon(faLaptopCode, {
-  transform: { size: 14 },
-});
-
 function replaceCodeSpanWithLink(textToReplace, link, linkText, isFile) {
   const icon = isFile ? fileSymbol : externalLinkSymbol;
 
@@ -125,14 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
       backgroundIsDark = false;
     }
   });
-
-  // add icons to projects container
-  const projectsContainer = document.getElementById("projects-container");
-
-  projectsContainer.innerHTML = projectsContainer.innerHTML.replace(
-    /FA-COMPUTER/g,
-    laptopCode.html
-  );
 });
 
 // this has to go afterwards, because weird syntax happens with this inline definition
