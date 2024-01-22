@@ -8,7 +8,6 @@ hljs.registerLanguage("json", json);
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons/faFileAlt";
-import { faLaptopCode } from "@fortawesome/free-solid-svg-icons/faLaptopCode";
 
 import resumePdf from "./static/robinsonz-resume.pdf";
 
