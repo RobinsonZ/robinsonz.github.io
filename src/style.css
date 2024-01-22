@@ -4,9 +4,7 @@
 
 @import "highlight.js/styles/monokai.css";
 
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400");
-@import url("https://fonts.googleapis.com/css?family=Lato:400");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Playfair+Display&family=Roboto+Mono&display=swap");
 
 @layer base {
   html {
