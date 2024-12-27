@@ -19,12 +19,22 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    assetModuleFilename: "[name][ext][query]"
+    assetModuleFilename: "[name][ext][query]",
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
     }),
+    // reusable redirect
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src/redirect.html"),
+      filename: "slate/index.html",
+      chunks: [], // don't load JS
+      templateParameters: {
+        redirectUrl: "https://medium.com/@zkislakrobinson/developing-slate-f751be5fa3db",
+      },
+    }),
+    // licenses.txt
     new LicensePlugin({
       additionalFiles: {
         "licenses.txt": txtLicenseTransform,
