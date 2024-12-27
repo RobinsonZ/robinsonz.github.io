@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     false
   );
   replaceCodeSpanWithLink("resume.pdf", resumePdf, "resume.pdf", true);
+  replaceCodeSpanWithLink("robinsonz.me/blog", "/blog", "robinsonz.me/blog", false);
 
   // it gets worse
   // go through and add auto-hiding linebreaks to all the colons in the JSON, so that we
