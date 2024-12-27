@@ -13,6 +13,16 @@ const txtLicenseTransform = (packages) =>
     )
     .join("\n\n");
 
+const clientRedirect = (slug, target) =>
+  new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, "src/redirect.html"),
+    filename: `${slug}/index.html`,
+    chunks: [], // don't load JS
+    templateParameters: {
+      redirectUrl: target,
+    },
+  });
+
 module.exports = {
   mode: isProduction ? "production" : "development",
   entry: "./src/index.js",
@@ -25,15 +35,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
     }),
-    // reusable redirect
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/redirect.html"),
-      filename: "slate/index.html",
-      chunks: [], // don't load JS
-      templateParameters: {
-        redirectUrl: "https://medium.com/@zkislakrobinson/developing-slate-f751be5fa3db",
-      },
-    }),
+    clientRedirect("slate", "https://medium.com/@zkislakrobinson/developing-slate-f751be5fa3db"),
     // licenses.txt
     new LicensePlugin({
       additionalFiles: {
