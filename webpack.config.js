@@ -16,7 +16,7 @@ const txtLicenseTransform = (packages) =>
 const clientRedirect = (slug, target) =>
   new HtmlWebpackPlugin({
     template: path.resolve(__dirname, "src/redirect.html"),
-    filename: `${slug}.html`,
+    filename: `${slug}/index.html`,
     chunks: [], // don't load JS
     templateParameters: {
       redirectUrl: target,
