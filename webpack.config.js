@@ -13,15 +13,20 @@ const txtLicenseTransform = (packages) =>
     )
     .join("\n\n");
 
+// output both `slug.html` and `slug/index.html` to allow maximum flexibility while avoiding unneeded
+// 301 redirects
 const clientRedirect = (slug, target) =>
-  new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, "src/redirect.html"),
-    filename: `${slug}/index.html`,
-    chunks: [], // don't load JS
-    templateParameters: {
-      redirectUrl: target,
-    },
-  });
+  [`${slug}.html`, `${slug}/index.html`].map(
+    (outfile) =>
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, "src/redirect.html"),
+        filename: outfile,
+        chunks: [], // don't load JS
+        templateParameters: {
+          redirectUrl: target,
+        },
+      })
+  );
 
 module.exports = {
   mode: isProduction ? "production" : "development",
@@ -35,7 +40,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
     }),
-    clientRedirect("slate", "https://medium.com/@zkislakrobinson/developing-slate-f751be5fa3db"),
+    ...clientRedirect(
+      "slate",
+      "https://medium.com/@zkislakrobinson/developing-slate-f751be5fa3db"
+    ),
     // licenses.txt
     new LicensePlugin({
       additionalFiles: {
