@@ -1,6 +1,3 @@
-import { tsParticles } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim";
-
 import hljs from "highlight.js/lib/core";
 import json from "highlight.js/lib/languages/json";
 hljs.registerLanguage("json", json);
@@ -36,9 +33,6 @@ function replaceCodeSpanWithLink(textToReplace, link, linkText, isFile) {
     codeSpanWithText.innerHTML = `<a class="hover:underline no-underline" href="${link}">"${linkText}<span class="font-serif">&hairsp;${icon.html}</span>"</a>`;
   }
 }
-
-// for turning background dark when user scrolls far enough
-let backgroundIsDark = false;
 
 // animation stuff
 document.addEventListener("DOMContentLoaded", function () {
@@ -97,39 +91,4 @@ document.addEventListener("DOMContentLoaded", function () {
     .getFullYear()
     .toString();
 
-  const splashCover = document.getElementById("splash-cover");
-
-  // I'm not done with the awful hacks yet
-  // add scroll listener to unhide the "cover" div when we scroll far enough
-
-  // this fixes the problem where on platforms with overscroll-y behavior, you
-  // could scroll past the div and view the particles underneath
-  addEventListener("scroll", (event) => {
-    if (window.scrollY >= window.visualViewport.height) {
-      if (!backgroundIsDark) {
-        window.requestAnimationFrame(() => {
-          splashCover.classList.remove("invisible");
-        });
-
-        backgroundIsDark = true;
-      }
-    } else if (backgroundIsDark) {
-      window.requestAnimationFrame(() => {
-        splashCover.classList.add("invisible");
-      });
-
-      backgroundIsDark = false;
-    }
-  });
 });
-
-// this has to go afterwards, because weird syntax happens with this inline definition
-(async () => {
-  await loadSlim(tsParticles);
-
-  const particlesConfig = await (
-    await fetch(new URL("./static/particles.json", import.meta.url))
-  ).json();
-
-  await tsParticles.load("ts-particles", particlesConfig);
-})();
