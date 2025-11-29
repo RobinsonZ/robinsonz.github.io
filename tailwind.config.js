@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        lato: ["Lato", "sans-serif"],
-        playfair: ["Playfair Display", "serif"],
+        inter: ["Inter", "sans-serif"],
+        "source-serif": ["'Source Serif 4'", "serif"],
         "roboto-mono": ["Roboto Mono", "monospace"],
       },
       boxShadow: {

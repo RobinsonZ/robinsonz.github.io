@@ -36,6 +36,13 @@ module.exports = {
     filename: "bundle.js",
     assetModuleFilename: "[name][ext][query]",
   },
+  devServer: {
+    host: "127.0.0.1",
+    port: process.env.PORT || 5173,
+    static: path.resolve(__dirname, "dist"),
+    hot: true,
+    open: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
