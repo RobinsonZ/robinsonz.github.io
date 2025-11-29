@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        plex: ["'IBM Plex Sans'", "sans-serif"],
+        "space-grotesk": ["'Space Grotesk'", "sans-serif"],
         "source-serif": ["'Source Serif 4'", "serif"],
         "roboto-mono": ["Roboto Mono", "monospace"],
       },

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highlight.js Theme Sampler</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0f172a;
+        --card: #111827;
+        --border: #1f2937;
+        --text: #e5e7eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 32px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+      }
+      h1 {
+        margin: 0 0 24px;
+        font-family: "Source Serif 4", Georgia, serif;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 12px;
+        color: #cbd5e1;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 16px;
+        align-items: stretch;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+      }
+      .title {
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.01em;
+        color: #cbd5e1;
+      }
+      iframe {
+        border: none;
+        border-radius: 10px;
+        background: #0b1220;
+        min-height: 220px;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap"
+    />
+  </head>
+  <body>
+    <h1>Highlight.js themes</h1>
+    <p>
+      Each card shows the same JSON rendered with a different theme from
+      <code>node_modules/highlight.js/styles</code>.
+    </p>
+    <div id="grid" class="grid" aria-live="polite"></div>
+    <script>
+      const themes = [
+        "1c-light",
+        "a11y-dark",
+        "a11y-light",
+        "agate",
+        "an-old-hope",
+        "androidstudio",
+        "arduino-light",
+        "arta",
+        "ascetic",
+        "atom-one-dark-reasonable",
+        "atom-one-dark",
+        "atom-one-light",
+        "brown-paper",
+        "codepen-embed",
+        "color-brewer",
+        "dark",
+        "default",
+        "devibeans",
+        "docco",
+        "far",
+        "felipec",
+        "foundation",
+        "github-dark-dimmed",
+        "github-dark",
+        "github",
+        "gml",
+        "googlecode",
+        "gradient-dark",
+        "gradient-light",
+        "grayscale",
+        "hybrid",
+        "idea",
+        "intellij-light",
+        "ir-black",
+        "isbl-editor-dark",
+        "isbl-editor-light",
+        "kimbie-dark",
+        "kimbie-light",
+        "lightfair",
+        "lioshi",
+        "magula",
+        "mono-blue",
+        "monokai-sublime",
+        "monokai",
+        "night-owl",
+        "nnfx-dark",
+        "nnfx-light",
+        "nord",
+        "obsidian",
+        "panda-syntax-dark",
+        "panda-syntax-light",
+        "paraiso-dark",
+        "paraiso-light",
+        "pojoaque",
+        "purebasic",
+        "qtcreator-dark",
+        "qtcreator-light",
+        "rainbow",
+        "routeros",
+        "school-book",
+        "shades-of-purple",
+        "srcery",
+        "stackoverflow-dark",
+        "stackoverflow-light",
+        "sunburst",
+        "tokyo-night-dark",
+        "tokyo-night-light",
+        "tomorrow-night-blue",
+        "tomorrow-night-bright",
+        "vs",
+        "vs2015",
+        "xcode",
+        "xt256",
+      ];
+
+      const sampleJson = `{
+  "email": "z [at] robinsonz [dot] me",
+  "github": "github.com/RobinsonZ",
+  "blog": "robinsonz.me/blog",
+  "linkedin": "linkedin.com/in/robinsonz/",
+  "resume": "resume.pdf"
+}`;
+
+      const HLJS_VERSION = "11.8.0";
+
+      const grid = document.getElementById("grid");
+
+      themes.forEach((theme) => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const title = document.createElement("div");
+        title.className = "title";
+        title.textContent = theme;
+
+        const iframe = document.createElement("iframe");
+        iframe.loading = "lazy";
+        iframe.title = `Preview: ${theme}`;
+
+        // Use unpkg to dodge CORB issues some browsers show with cdnjs CSS
+        const themeHref = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${HLJS_VERSION}/styles/${theme}.min.css`;
+
+        iframe.srcdoc = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      padding: 12px 14px;
+      background: #0b1220;
+      font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: #e5e7eb;
+    }
+    pre {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  </style>
+  <!-- theme CSS injected via fetch below -->
+</head>
+<body>
+  <pre><code class="language-json hljs">${sampleJson.replace(/</g, "&lt;")}</code></pre>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${HLJS_VERSION}/highlight.min.js"><\/script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${HLJS_VERSION}/languages/json.min.js"><\/script>
+  <script>
+    (async () => {
+      try {
+        const css = await fetch("${themeHref}", { mode: "cors" }).then((r) => r.text());
+        const style = document.createElement("style");
+        style.textContent = css;
+        document.head.appendChild(style);
+      } catch (e) {
+        console.error("Failed to load theme", e);
+      }
+      hljs.highlightAll();
+    })();
+  <\/script>
+</body>
+</html>`;
+
+        card.appendChild(title);
+        card.appendChild(iframe);
+        grid.appendChild(card);
+      });
+    </script>
+  </body>
+</html>
