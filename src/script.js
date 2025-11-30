@@ -1,3 +1,6 @@
+import { tsParticles } from "tsparticles-engine";
+import { loadSlim } from "tsparticles-slim";
+
 import hljs from "highlight.js/lib/core";
 import json from "highlight.js/lib/languages/json";
 hljs.registerLanguage("json", json);
@@ -34,6 +37,9 @@ function replaceCodeSpanWithLink(textToReplace, link, linkText, isFile) {
   }
 }
 
+// for turning background dark when user scrolls far enough
+let backgroundIsDark = false;
+
 // animation stuff
 document.addEventListener("DOMContentLoaded", function () {
   var doReplace = function (attribute) {
@@ -53,13 +59,46 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   };
 
-  setTimeout(doReplace("replace-instant"), 1);
-  setTimeout(doReplace("replace-1s"), 1000);
-  setTimeout(doReplace("replace-2s"), 2000);
-  setTimeout(doReplace("replace-3s"), 3000);
-  setTimeout(doReplace("replace-4s"), 4000);
+  const animationStorageKey = "animationLastRun";
+  const oneDayMs = 24 * 60 * 60 * 1000;
 
-  hljs.highlightAll();
+  let shouldPlayAnimation = true;
+  try {
+    const lastRun = parseInt(localStorage.getItem(animationStorageKey) || "", 10);
+    if (Number.isFinite(lastRun)) {
+      shouldPlayAnimation = Date.now() - lastRun > oneDayMs;
+    }
+  } catch (e) {
+    // localStorage unavailable; fall back to playing animation
+    shouldPlayAnimation = true;
+  }
+
+  const replacementSchedule = [
+    ["replace-instant", 1],
+    ["replace-1s", 1000],
+    ["replace-2s", 2000],
+    ["replace-3s", 3000],
+    ["replace-4s", 4000],
+  ];
+
+  if (shouldPlayAnimation) {
+    const now = Date.now();
+    replacementSchedule.forEach(([attribute, delay]) => {
+      setTimeout(doReplace(attribute), delay);
+    });
+    try {
+      localStorage.setItem(animationStorageKey, now.toString());
+    } catch (e) {
+      // ignore storage failures
+    }
+  } else {
+    // apply all replacements immediately so blocks are visible without animation
+    replacementSchedule.forEach(([attribute]) => {
+      doReplace(attribute)();
+    });
+  }
+
+  // hljs.highlightAll();
 
   // absolutely awful processing to make the code block look nice
   replaceCodeSpanWithLink(
@@ -83,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const jsonCodeblock = document.getElementById("contacts-json");
   jsonCodeblock.innerHTML = jsonCodeblock.innerHTML.replace(
     /:<\/span> /g,
-    ':</span> <span class="sm:hidden">\n    </span>'
+    ':</span> <span class="min-[460px]:hidden">\n    </span>'
   );
 
   // fix copyright year if needed
@@ -91,4 +130,40 @@ document.addEventListener("DOMContentLoaded", function () {
     .getFullYear()
     .toString();
 
+
+  const splashCover = document.getElementById("splash-cover");
+
+  // I'm not done with the awful hacks yet
+  // add scroll listener to unhide the "cover" div when we scroll far enough
+
+  // this fixes the problem where on platforms with overscroll-y behavior, you
+  // could scroll past the div and view the particles underneath
+  addEventListener("scroll", (event) => {
+    if (window.scrollY >= window.visualViewport.height) {
+      if (!backgroundIsDark) {
+        window.requestAnimationFrame(() => {
+          splashCover.classList.remove("invisible");
+        });
+
+        backgroundIsDark = true;
+      }
+    } else if (backgroundIsDark) {
+      window.requestAnimationFrame(() => {
+        splashCover.classList.add("invisible");
+      });
+
+      backgroundIsDark = false;
+    }
+  });
 });
+
+// this has to go afterwards, because weird syntax happens with this inline definition
+(async () => {
+  await loadSlim(tsParticles);
+
+  const particlesConfig = await (
+    await fetch(new URL("./static/particles.json", import.meta.url))
+  ).json();
+
+  await tsParticles.load("ts-particles", particlesConfig);
+})();

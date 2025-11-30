@@ -47,11 +47,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
     }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/themes.html"),
-      filename: "themes.html",
-      chunks: [],
-    }),
     ...clientRedirect(
       "slate",
       "https://medium.com/@zkislakrobinson/developing-slate-f751be5fa3db"

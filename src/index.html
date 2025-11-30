@@ -10,7 +10,7 @@
     />
     <meta name="keywords" content="" />
     <meta name="author" content="Zachary Robinson" />
-    <meta name="theme-color" content="#0F172A" />
+    <meta name="theme-color" content="#030712" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -27,11 +27,15 @@
     </script>
   </head>
   <body
-    class="tracking-normal leading-relaxed font-plex bg-gray-900 bg-opacity-90 scroll-smooth"
+    class="tracking-normal leading-relaxed font-lato bg-gray-900 scroll-smooth"
   >
     <div
       class="pt-4 sm:pt-12 lg:pt-24 h-screen w-screen bg-gray-900 motion-reduce:bg-transparent bg-opacity-90 fixed z-10"
     >
+      <div
+        id="splash-cover"
+        class="h-3/4 w-screen absolute bottom-0 bg-gray-950 invisible z-20 pointer-events-none"
+      ></div>
       <div
         class="container px-3 mx-auto flex flex-col items-center text-[#eee]"
       >
@@ -57,12 +61,12 @@
         >
           <pre
             id="contacts-json"
-          ><code class="language-json bg-opacity-0 bg-transparent font-roboto-mono">{
-  "email": "z [at] robinsonz [dot] me",
-  "github": "github.com/RobinsonZ",
-  "blog": "robinsonz.me/blog",
-  "linkedin": "linkedin.com/in/robinsonz/",
-  "resume": "resume.pdf"
+          ><code class="block p-4 overflow-x-auto font-roboto-mono text-gray-400">{
+  "email": <span class="text-[#eee]">"z [at] robinsonz [dot] me"</span>,
+  "github": <span class="text-[#eee]">"github.com/RobinsonZ"</span>,
+  "blog": <span class="text-[#eee]">"robinsonz.me/blog"</span>,
+  "linkedin": <span class="text-[#eee]">"linkedin.com/in/robinsonz/"</span>,
+  "resume": <span class="text-[#eee]">"resume.pdf"</span>
 }</code></pre>
         </div>
         <div
@@ -71,10 +75,14 @@
           data-replace-4s='{ "duration-1000": "" }'
         >
           <div class="flex text-2xl w-fit m-0">
-            <a class="drop-shadow-lg" href="#about-me">About Me</a>
+            <a class="drop-shadow-lg text-gray-400" href="#about-me"
+              >About Me</a
+            >
           </div>
           <div class="flex text-2xl w-fit m-0">
-            <a class="drop-shadow-lg" href="#projects">Projects</a>
+            <a class="drop-shadow-lg text-gray-400" href="#projects"
+              >Projects</a
+            >
           </div>
         </div>
       </div>
@@ -90,16 +98,14 @@
           <div id="aboutme-container">
             <a id="about-me" class="relative -top-4 md:-top-16"></a>
             <h2
-              class="my-4 text-4xl leading-tight font-source-serif w-full z-20 lg:mb-8"
+              class="my-4 text-4xl leading-tight font-source-serif w-full z-20 lg:mb-8 text-gray-400"
             >
               About Me
             </h2>
             <p class="mb-4">
-              My name is Zack Robinson. I'm a software engineer, designer, and (occasional) writer.
-            </p>
-            <p class="mb-4">
-              I have a particular interest in human-computer interaction,
-              embedded systems, efficient infrastructure, and cross-disciplinary
+              My name is Zack Robinson. I'm a software engineer with a
+              particular interest in human-computer interaction, embedded
+              systems, efficient infrastructure, and cross-disciplinary
               integration. Currently, I'm working at
               <a href="https://www.spacex.com/">SpaceX</a> to provide
               <a href="https://www.starlink.com/">
@@ -109,12 +115,14 @@
             <p class="mb-4">
               I tend not to focus on specific languages, and can quickly learn
               new technologies and frameworks as needed. With that said,
-              I&rsquo;ve done non-trivial work in Python, Typescript,
+              I&rsquo;ve done non-trivial work in Python, Typescript, C#,
               HTML/CSS/JS, Java, Kotlin, and OCaml, plus some exposure to Rust,
               C/C++, and Verilog. I&rsquo;m familiar with deploying and running
               code in a variety of environments: embedded systems, mobile apps,
-              on-prem servers, massive Kubernetes clusters, and purely
-              serverless cloud-based architectures.
+              on-prem servers, massive cloud-based Kubernetes clusters, and
+              purely serverless architectures. In general, I enjoy any
+              opportunity to drop into a new problem space and leave it better
+              than I found it.
             </p>
             <p class="mb-4">
               I completed a BA in Computer Science (with minors in Engineering
@@ -130,7 +138,7 @@
           <div id="projects-container">
             <a id="projects" class="relative -top-4 md:-top-16"></a>
             <h2
-              class="my-4 text-4xl leading-tight font-source-serif w-full z-20 lg:mt-20 lg:mb-8"
+              class="my-4 text-4xl leading-tight font-source-serif w-full z-20 lg:mt-20 lg:mb-8 text-gray-400"
             >
               Projects and Past Work
             </h2>
@@ -242,20 +250,24 @@
               </li>
             </ul>
           </div>
-          <div class="absolute bottom-4 text-sm">
+          <div class="absolute bottom-4 text-sm w-full lg:w-3/5">
             <p class="mb-4">
               &copy; <span id="copy-year">2024</span> Zack Robinson. This
-              website was built using
-              <a href="https://tailwindcss.com/">Tailwind CSS</a> and
-              <a href="/licenses.txt">other projects</a>, and is also
+              website was built with
+              <a href="/licenses.txt">open-source software</a>, and is itself
               <a href="https://github.com/RobinsonZ/robinsonz.github.io"
                 >open-source</a
               >
-              under the MIT License.
+              under the MIT License. It uses Source Serif 4 for headings, Lato
+              for body copy, and Roboto Mono for code.
             </p>
           </div>
         </div>
       </div>
     </div>
+    <div
+      id="ts-particles"
+      class="fixed -z-50 h-screen w-screen motion-reduce:hidden"
+    ></div>
   </body>
 </html>

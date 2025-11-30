@@ -1,9 +1,24 @@
 {
   "background": {
-      "color": "#fff"
+      "color": "#000"
   },
   "interactivity": {
-      
+    "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "bubble"
+        },
+        "resize": true
+    },
+    "detect_on": "window",
+    "modes": {
+      "bubble": {
+        "distance": 300,
+        "size": 10,
+        "duration": 2,
+        "speed": 3
+      }
+    }
   },
   "particles": {
       "color": {
@@ -12,7 +27,7 @@
               "sync": false,
               "speed": 50
           },
-          "value": "#000"
+          "value": "#bbb"
       },
       "links": {
           "color": "random",
@@ -22,7 +37,8 @@
           "enable": true
       },
       "move": {
-          "enable": true
+          "enable": true,
+          "speed": 1
       },
       "number": {
           "density": {
@@ -44,11 +60,11 @@
       },
       "size": {
           "animation": {
-              "enable": true,
+              "enable": false,
               "minimumValue": 1,
               "speed": 3
           },
-          "value": 3,
+          "value": 6,
           "random": {
               "enable": true,
               "minimumValue": 1

@@ -4,8 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        plex: ["'IBM Plex Sans'", "sans-serif"],
-        "space-grotesk": ["'Space Grotesk'", "sans-serif"],
+        "lato": ["Lato", "sans-serif"],
         "source-serif": ["'Source Serif 4'", "serif"],
         "roboto-mono": ["Roboto Mono", "monospace"],
       },
