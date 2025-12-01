@@ -1,9 +1,6 @@
 import { tsParticles } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 
-import hljs from "highlight.js/lib/core";
-import json from "highlight.js/lib/languages/json";
-hljs.registerLanguage("json", json);
 
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
@@ -98,8 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // hljs.highlightAll();
-
   // absolutely awful processing to make the code block look nice
   replaceCodeSpanWithLink(
     "github.com/RobinsonZ",
@@ -121,8 +116,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // linebreak between key and value only up to the medium breakpoint
   const jsonCodeblock = document.getElementById("contacts-json");
   jsonCodeblock.innerHTML = jsonCodeblock.innerHTML.replace(
-    /:<\/span> /g,
-    ':</span> <span class="min-[460px]:hidden">\n    </span>'
+    /<span class="text-\[#eee\]">/g,
+    '<span class="min-[460px]:hidden">\n    </span><span class="text-[#eee]">'
   );
 
   // fix copyright year if needed

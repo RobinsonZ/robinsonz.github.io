@@ -30,38 +30,36 @@
     class="tracking-normal leading-relaxed font-lato bg-gray-900 scroll-smooth"
   >
     <div
-      class="pt-4 sm:pt-12 lg:pt-24 h-screen w-screen bg-gray-900 motion-reduce:bg-transparent bg-opacity-90 fixed z-10"
+      class="pt-4 sm:pt-24 h-screen w-screen bg-gray-900 motion-reduce:bg-transparent bg-opacity-90 fixed z-10"
     >
       <div
         id="splash-cover"
         class="h-3/4 w-screen absolute bottom-0 bg-gray-950 invisible z-20 pointer-events-none"
       ></div>
-      <div
-        class="container px-3 mx-auto flex flex-col items-center text-[#eee]"
-      >
+      <div class="px-5 mx-auto flex flex-col items-center text-[#eee]">
         <div
           class="flex flex-col w-full max-w-4xl justify-center items-center text-center"
         >
           <h1
-            class="my-4 text-6xl lg:text-8xl drop-shadow-lg leading-tight font-source-serif font-semibold w-full z-20 lg:mb-16"
+            class="my-4 text-6xl sm:text-8xl drop-shadow-lg leading-tight font-source-serif font-semibold w-full z-20 sm:mb-16"
           >
             Hi, I&rsquo;m Zack.
           </h1>
           <p
-            class="leading-normal drop-shadow-lg text-2xl mb-8 lg:mb-16 transition translate-y-12 opacity-0 ease-out duration-1000 invisible motion-reduce:duration-0 motion-reduce:visible motion-reduce:translate-y-0 motion-reduce:opacity-100"
+            class="leading-normal drop-shadow-lg text-xl sm:text-2xl mb-8 sm:mb-16 transition translate-y-12 opacity-0 ease-out duration-1000 invisible motion-reduce:duration-0 motion-reduce:visible motion-reduce:translate-y-0 motion-reduce:opacity-100"
             data-replace-1s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100", "invisible": ""}'
           >
             I build software and systems to help people accomplish their goals.
           </p>
         </div>
         <div
-          class="flex flex-col mb-8 lg:mb-16 w-full max-w-4xl justify-center items-start bg-gray-800 rounded-xl drop-shadow-lg transition translate-y-12 opacity-0 duration-1000 invisible motion-reduce:duration-0 motion-reduce:visible motion-reduce:translate-y-0 motion-reduce:opacity-100"
+          class="flex flex-col mb-8 sm:mb-16 w-full max-w-3xl justify-center items-start bg-gray-800 rounded-xl drop-shadow-lg transition translate-y-12 opacity-0 duration-1000 invisible motion-reduce:duration-0 motion-reduce:visible motion-reduce:translate-y-0 motion-reduce:opacity-100"
           data-replace-2s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100", "invisible": ""}'
           data-replace-3s='{ "duration-1000": "" }'
         >
           <pre
             id="contacts-json"
-          ><code class="block p-4 overflow-x-auto font-roboto-mono text-gray-400">{
+          ><code class="block p-4 overflow-x-auto font-cascadia-mono text-gray-400">{
   "email": <span class="text-[#eee]">"z [at] robinsonz [dot] me"</span>,
   "github": <span class="text-[#eee]">"github.com/RobinsonZ"</span>,
   "blog": <span class="text-[#eee]">"robinsonz.me/blog"</span>,
@@ -70,7 +68,7 @@
 }</code></pre>
         </div>
         <div
-          class="flex flex-row container mb-8 lg:mb-16 w-full max-w-4xl items-center text-center justify-center gap-12 transition translate-y-12 opacity-0 duration-1000 invisible motion-reduce:duration-0 motion-reduce:visible motion-reduce:translate-y-0 motion-reduce:opacity-100"
+          class="flex flex-row container mb-8 sm:mb-16 w-full max-w-4xl items-center text-center justify-center gap-12 transition translate-y-12 opacity-0 duration-1000 invisible motion-reduce:duration-0 motion-reduce:visible motion-reduce:translate-y-0 motion-reduce:opacity-100"
           data-replace-3s='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100", "invisible": ""}'
           data-replace-4s='{ "duration-1000": "" }'
         >
@@ -88,15 +86,13 @@
       </div>
     </div>
     <div class="h-screen w-screen invisible -z-50"></div>
-    <div
-      class="w-screen min-h-screen bg-gray-950 shadow-xl-top z-20 absolute pt-4 md:pt-16 py-4"
-    >
+    <div class="w-screen min-h-screen shadow-xl-top z-20 absolute">
       <div
-        class="container px-3 mx-auto flex flex-row lg:flex-col items-center lg:items-start text-[#eee]"
+        class="min-h-screen w-screen px-10 bg-gray-950 text-[#eee] pt-8 sm:pt-16 py-4"
       >
-        <div class="flex flex-col w-full lg:w-3/5 pb-24">
+        <div class="w-full max-w-4xl min-h-full h-full mx-auto">
           <div id="aboutme-container">
-            <a id="about-me" class="relative -top-4 md:-top-16"></a>
+            <a id="about-me" class="relative -top-8 sm:-top-20"></a>
             <h2
               class="my-4 text-4xl leading-tight font-source-serif w-full z-20 lg:mb-8 text-gray-400"
             >
@@ -136,9 +132,9 @@
             </p>
           </div>
           <div id="projects-container">
-            <a id="projects" class="relative -top-4 md:-top-16"></a>
+            <a id="projects" class="relative -top-4 sm:-top-20"></a>
             <h2
-              class="my-4 text-4xl leading-tight font-source-serif w-full z-20 lg:mt-20 lg:mb-8 text-gray-400"
+              class="my-4 text-4xl leading-tight font-source-serif w-full z-20 sm:mt-20 sm:mb-8 text-gray-400"
             >
               Projects and Past Work
             </h2>
@@ -206,7 +202,7 @@
               </li>
               <li class="mb-4">
                 <a href="https://www.polaris.com/">Polaris</a>: I spent Summer
-                2022 as a System Administrator Intern at Polaris, one of the
+                2022 interning at Polaris, one of the
                 world&rsquo;s leading powersports manufacturers. Using Ansible
                 Playbooks and some PowerShell, I helped migrate several hundred
                 legacy Windows virtual machines from an on-premises system to a
@@ -218,20 +214,12 @@
               <li class="mb-4">
                 <a href="https://www.streem.com/">Streem</a>: I spent Summer
                 2020 helping to make the world&rsquo;s expertise more accessible
-                as a Software Engineer Intern at Streem. I developed several
+                as a software engineer intern at Streem. I developed several
                 Android utilities to generate test files and proofs-of-concept
                 for a new video backend system, and worked on a new system for
                 logging and metrics ingestion from WebRTC streams using Amazon
                 Kinesis pipelines.
               </li>
-              <!-- <li class="mb-4">
-                COVID-19 PPE: I used my personal 3D printer, and enlisted some
-                other printers, to produce over 1,000 pieces of personal
-                protective equipment (PPE) for healthcare workers during the
-                initial phase of the COVID-19 pandemic in Spring and Summer
-                2020. These were delivered directly to Portland-area hospitals
-                or delivered through the MakerForce network.
-              </li> -->
               <li class="mb-4">
                 <a href="https://www.team1540.org/">FRC Team 1540</a>: In high
                 school, I was a very involved student on FIRST&reg; Robotics
@@ -250,16 +238,16 @@
               </li>
             </ul>
           </div>
-          <div class="absolute bottom-4 text-sm w-full lg:w-3/5">
+          <div class="text-sm mt-12">
             <p class="mb-4">
               &copy; <span id="copy-year">2024</span> Zack Robinson. This
               website was built with
-              <a href="/licenses.txt">open-source software</a>, and is itself
+              <a href="/licenses.txt">open-source software</a> and is itself
               <a href="https://github.com/RobinsonZ/robinsonz.github.io"
                 >open-source</a
               >
-              under the MIT License. It uses Source Serif 4 for headings, Lato
-              for body copy, and Roboto Mono for code.
+              under the MIT License. Headings are set in Source Serif 4, body copy is
+              set in Lato, and code is set in Cascadia Mono.
             </p>
           </div>
         </div>
