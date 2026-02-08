@@ -1,12 +1,9 @@
 import { tsParticles } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 
-
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons/faFileAlt";
-
-import resumePdf from "./static/robinsonz-resume.pdf";
 
 const externalLinkSymbol = icon(faArrowUpRightFromSquare, {
   transform: { size: 12 },
@@ -108,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "in/robinsonz",
     false
   );
-  replaceCodeSpanWithLink("resume.pdf", resumePdf, "resume.pdf", true);
+  replaceCodeSpanWithLink("resume.pdf", "/robinsonz-resume.pdf", "resume.pdf", true);
   replaceCodeSpanWithLink("robinsonz.me/blog", "/blog", "robinsonz.me/blog", false);
 
   // it gets worse
@@ -156,9 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 (async () => {
   await loadSlim(tsParticles);
 
-  const particlesConfig = await (
-    await fetch(new URL("./static/particles.json", import.meta.url))
-  ).json();
+  const particlesConfig = await (await fetch("/particles.json")).json();
 
   await tsParticles.load("ts-particles", particlesConfig);
 })();

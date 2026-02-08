@@ -12,30 +12,20 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-59P4P0W1W8");
     </script>
-
-    <meta
-      http-equiv="refresh"
-      content="0;url=<%= redirectUrl %>"
-    />
-
+    <meta http-equiv="refresh" content="0;url={{REDIRECT_URL}}" />
     <script>
       // JavaScript fallback in case the meta tag fails
       setTimeout(() => {
-        window.location.href =
-          "<%= redirectUrl %>";
+        window.location.href = "{{REDIRECT_URL}}";
       }, 100); // ~100ms delay to give GA a chance
     </script>
   </head>
   <body>
     <p>
       If you are not redirected automatically,
-      <a
-        href="<%= redirectUrl %>"
-        >click here</a
-      >.
+      <a href="{{REDIRECT_URL}}">click here</a>.
     </p>
   </body>
 </html>
