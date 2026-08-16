@@ -105,6 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
     "in/robinsonz",
     false
   );
+  replaceCodeSpanWithLink(
+    "@zackR154",
+    "https://x.com/zackR154/",
+    "@zackR154",
+    false
+  );
   replaceCodeSpanWithLink("resume.pdf", "/robinsonz-resume.pdf", "resume.pdf", true);
   replaceCodeSpanWithLink("robinsonz.me/blog", "/blog", "robinsonz.me/blog", false);
 
