@@ -3,23 +3,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && license-checker --json --out dist/licenses.json && node scripts/generate-licenses.js",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "author": "Zachary Robinson",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "license-checker": "^25.0.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.2",
     "vite": "^7.3.1",
     "vite-plugin-singlefile": "^2.0.0"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "tsparticles-engine": "^2.9.3",
-    "tsparticles-slim": "^2.9.3"
   }
 }

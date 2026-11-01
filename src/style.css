@@ -3,12 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply scroll-smooth;
-    @apply motion-reduce:scroll-auto;
-  }
-
   a {
-    @apply underline;
+    @apply underline text-blue-800 visited:text-purple-900;
   }
 }

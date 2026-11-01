@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import { viteSingleFile } from "vite-plugin-singlefile";
-import { readFileSync, writeFileSync, mkdirSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, statSync } from "fs";
 
 // Define redirects: slug -> target URL
 const redirects = {
@@ -24,6 +24,16 @@ const generateRedirects = () => ({
   },
 });
 
+// Fill in the resume's file size (e.g. "137 kB") wherever {{RESUME_SIZE}} appears
+const resumeSize = () => ({
+  name: "resume-size",
+  transformIndexHtml(html) {
+    const bytes = statSync("src/static/robinsonz-resume.pdf").size;
+    const size = `${Math.round(bytes / 1000)}&nbsp;kB`;
+    return html.replaceAll("{{RESUME_SIZE}}", size);
+  },
+});
+
 export default defineConfig({
   root: "src",
   publicDir: "static",
@@ -31,7 +41,7 @@ export default defineConfig({
     outDir: "../dist",
     emptyOutDir: true,
   },
-  plugins: [viteSingleFile(), generateRedirects()],
+  plugins: [resumeSize(), viteSingleFile(), generateRedirects()],
   server: {
     host: "127.0.0.1",
     port: 5173,
